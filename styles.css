@@ -1,0 +1,226 @@
+/* Predefined values */
+
+:root {
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --primary-color: hsl(277, 64%, 61%);
+  --overlay-color: hsla(277, 93%, 42%, 0.514);
+
+  --main-heading-stats: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Lexend Deca", sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  background: var(--main-background);
+  color: #fff;
+  padding: 2rem;
+  margin: 0 auto;
+}
+/* Utilities */
+
+span.text-primary {
+  color: var(--primary-color);
+}
+
+span.text-secondary {
+  color: var(--main-heading-stats);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--secondary-font);
+}
+
+/* Main */
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.container .content {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-background);
+  width: 85%;
+  padding: 2rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.container .content .row > h1 {
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.container .content .row > p {
+  margin-top: 1.5rem;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  color: var(--main-paragraph);
+}
+
+.container .content .items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.container .content .items .item {
+  list-style: none;
+  color: var(--main-paragraph);
+  font-family: var(--secondary-font);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Image Box */
+.container .image {
+  background: url(/images/image-header-mobile.jpg) no-repeat center center/cover;
+  width: 85%;
+  height: 30vh;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.container .image::after {
+  content: "";
+  background: var(--overlay-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  z-index: 1;
+}
+
+/* Footer */
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 3rem auto;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile View */
+
+@media (min-width: 600px) {
+  body {
+    padding: 6rem;
+  }
+  span.text-secondary {
+    font-size: 1.8rem;
+  }
+  .container .content .row > h1 {
+    font-size: 2.2rem;
+  }
+  .container .content .row > p {
+    line-height: 1.3;
+    font-size: 1.4rem;
+  }
+  .container .content .items .item {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Ipad View */
+@media (min-width: 800px) {
+  body {
+    padding: 8rem;
+  }
+  span.text-secondary {
+    font-size: 2rem;
+  }
+  .container .content .row > h1 {
+    font-size: 2.8rem;
+  }
+  .container .content .row > p {
+    font-size: 1.6rem;
+  }
+  .container .content .items .item {
+    font-size: 1.6rem;
+
+    line-height: 1.5;
+  }
+  .container .image {
+    height: 50vh;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+  span.text-secondary {
+    font-size: 1.4rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    background: var(--card-background);
+    padding-left: 4rem;
+    border-radius: 10px;
+  }
+  .container .content {
+    width: 50%;
+    padding: 0;
+    padding-right: 5rem;
+    justify-content: left;
+  }
+  .container .content .row > h1 {
+    font-size: 2.3rem;
+  }
+  .container .content .row > p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .container .content .items {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    margin-top: 2rem;
+  }
+
+  .container .content .items .item {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding-right: 2.5rem;
+  }
+
+  /* Image Box */
+  .container .image {
+    background: url(/images/image-header-desktop.jpg) no-repeat center
+      center/cover;
+    width: 50%;
+    height: 50vh;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .container .image::after {
+    border-radius: 0 10px 10px 0;
+  }
+}
