@@ -124,7 +124,7 @@ span.text-secondary {
 
 @media (min-width: 960px) {
   body {
-    margin: 5rem 3rem;
+    margin: 5rem 5rem;
   }
   span.text-secondary {
     color: var(--main-heading-stats);
