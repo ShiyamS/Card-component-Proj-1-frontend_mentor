@@ -173,27 +173,40 @@ span.text-secondary {
 /* Desktop View */
 @media (min-width: 1024px) {
   span.text-secondary {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: left;
     text-align: left;
-    background: var(--card-background);
-    padding-left: 4rem;
-    border-radius: 10px;
   }
+
   .container .content {
     width: 50%;
     padding: 0;
-    padding-right: 5rem;
     justify-content: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0.3rem;
+    padding-left: 4rem;
   }
+
+  .container .content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
+    border-radius: 10px 0 0 10px;
+  }
+
   .container .content .row > h1 {
-    font-size: 2.3rem;
+    margin-top: 2.3rem;
+    font-size: 1.65rem;
   }
   .container .content .row > p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.5;
   }
 
