@@ -4,7 +4,7 @@
   --main-background: hsl(233, 47%, 7%);
   --card-background: hsl(244, 38%, 16%);
   --primary-color: hsl(277, 64%, 61%);
-  --overlay-color: hsla(277, 93%, 42%, 0.514);
+  --overlay-color: hsla(277, 100%, 41%, 0.466);
 
   --main-heading-stats: hsl(0, 0%, 100%);
   --main-paragraph: hsla(0, 0%, 100%, 0.75);
@@ -25,7 +25,6 @@ body {
   font-family: var(--primary-font);
   background: var(--main-background);
   color: #fff;
-
   margin: 5rem 2rem;
 }
 /* Utilities */
@@ -123,6 +122,9 @@ span.text-secondary {
 /* Desktop view */
 
 @media (min-width: 900px) {
+  body {
+    margin: 5rem 3rem;
+  }
   span.text-secondary {
     color: var(--main-heading-stats);
     font-size: 1.5rem;
@@ -131,15 +133,15 @@ span.text-secondary {
     flex-direction: row;
     text-align: left;
     background: var(--card-background);
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
     width: 100%;
   }
 
   .container .content {
     width: 50%;
-    padding: 0 4rem;
-
+    padding: 0;
     background: none;
+    padding: 0 3rem;
   }
   .container .content .row > h1 {
     font-size: 2em;
@@ -166,10 +168,17 @@ span.text-secondary {
   }
 
   .container .image {
-    background: url(/images/image-header-mobile.jpg) no-repeat center
+    background: url(/images/image-header-desktop.jpg) no-repeat center
       center/cover;
     width: 50%;
-    height: 60vh;
+    height: 70vh;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .container .image .overlay {
+    background-color: var(--overlay-color);
+    width: 100%;
+    height: 100%;
     border-radius: 0 10px 10px 0;
   }
 }
